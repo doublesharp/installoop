@@ -18,19 +18,23 @@
     "release": "npm run build && np --no-2fa"
   },
   "keywords": [
+    "recursive",
+    "install",
+    "npm",
     "javascript",
-    "typescript"
+    "typescript",
+    "cli"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/barthofu/spawnise.git"
+    "url": "git+https://github.com/barthofu/installoop.git"
   },
   "author": "Bartholomé Gili",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/barthofu/spawnise/issues"
+    "url": "https://github.com/barthofu/installoop/issues"
   },
-  "homepage": "https://github.com/barthofu/spawnise#readme",
+  "homepage": "https://github.com/barthofu/installoop#readme",
   "dependencies": {
     "arg": "^5.0.2",
     "spawnise": "^1.0.0"
