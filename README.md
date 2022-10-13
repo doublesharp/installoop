@@ -1,11 +1,6 @@
 # Installoop
 
-Promisify the native node.js `spawn` function!
-
-## Description
-
-This simple package lets you run commands on your device asynchronously using promises through the `spawn` function.
-In fact, it uses the [cross-spawn](https://www.npmjs.com/package/cross-spawn) library under the hood in order to have a more consistent spawn. 
+Simple CLI to recursively install npm dependencies from multiple `package.json`!
 
 ## Getting Started
 
@@ -17,15 +12,38 @@ In fact, it uses the [cross-spawn](https://www.npmjs.com/package/cross-spawn) li
 ### Installing
 
 ```bash
-npm install spawnise
-```
-or
-```bash
-yarn add spawnise
+npm install -g installoop
 ```
 
 ## Usage
 
+#### Basic usage
+
+```bash
+installoop --rootDir=./
+```
+
+#### Skip root `package.json`
+
+```bash
+installoop --rootDir=./ --skipRoot
+```
+
+#### Include `node_modules`
+
+By default, `node_modules` folders are ignored
+
+```bash
+installoop --rootDir=./ --includeModules
+```
+
+#### Silent mode
+
+Silent mode won't show you the original `npm install` console outputs.
+
+```bash
+installoop --rootDir=./ --silent
+```
 
 ## Contributing
 
