@@ -38,6 +38,7 @@ import { getPackages } from './utils'
         console.log(`\nInstalling ${pathWithoutPackage} packages...\n`)
         
         await spawn('npm install', {
+            env: process.env,
             cwd: pathWithoutPackage,
             stdio: args['--silent'] ? 'ignore' : 'inherit'
         })
