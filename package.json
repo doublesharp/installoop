@@ -1,0 +1,44 @@
+{
+  "name": "installoop",
+  "version": "0.0.0",
+  "description": "Recursively install npm packages",
+  "main": "./build/index.js",
+  "bin": {
+    "installoop": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf build && tsc",
+    "test": "echo \"No test specified\" && exit 0",
+    "release": "npm run build && np --no-2fa"
+  },
+  "keywords": [
+    "javascript",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barthofu/spawnise.git"
+  },
+  "author": "Bartholomé Gili",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barthofu/spawnise/issues"
+  },
+  "homepage": "https://github.com/barthofu/spawnise#readme",
+  "dependencies": {
+    "arg": "^5.0.2",
+    "spawnise": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.8.0",
+    "np": "^7.6.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.4"
+  }
+}
