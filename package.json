@@ -37,7 +37,7 @@
   "homepage": "https://github.com/barthofu/installoop#readme",
   "dependencies": {
     "arg": "^5.0.2",
-    "spawnise": "^1.0.0"
+    "spawnise": "^1.1.0"
   },
   "devDependencies": {
     "@types/node": "^18.8.0",
