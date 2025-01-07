@@ -13,6 +13,7 @@
     "access": "public"
   },
   "scripts": {
+    "install": "tsc",
     "build": "rimraf build && tsc",
     "test": "echo \"No test specified\" && exit 0",
     "release": "npm run build && np --no-2fa"
