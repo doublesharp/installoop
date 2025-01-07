@@ -4,9 +4,7 @@ import arg from 'arg'
 import { spawn } from 'spawnise'
 
 import { getPackages } from './utils'
-
-(async () => {
-
+;(async () => {
     let paths: string[] = []
 
     // define CLI arguments
@@ -22,7 +20,6 @@ import { getPackages } from './utils'
 
     // get path of all package.json
     for (const dir of args['--rootDir']) {
-        
         const packages = await getPackages(dir, !!args['--includeModules'], args['--skipRoot'])
         paths.push(...packages)
     }
@@ -31,22 +28,20 @@ import { getPackages } from './utils'
     console.log(`Found ${paths.length} package.json\n`)
 
     for (const path of paths) {
-
         const pathWithoutPackage = path.slice(0, -12)
-        
+
         console.log('-'.repeat(process.stdout.columns))
         console.log(`\nInstalling ${pathWithoutPackage} packages...\n`)
-        
+
         await spawn('npm', ['install'], {
             env: process.env,
             cwd: pathWithoutPackage,
             stdio: args['--silent'] ? 'ignore' : 'inherit'
         })
     }
-    
+
     if (paths.length > 0) {
         console.log('-'.repeat(process.stdout.columns))
         console.log(`\nInstalled npm packages from ${paths.length} package.json!\n`)
     }
-
 })()
